@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soil Doctor AI</title>
+  <link rel="stylesheet" href="/css/AI.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="./home.html" style="color:#285e61 ; text-decoration: none;">მემამულე</a></h1>
+      <p>შეიყვანეთ მიწის შემადგენელი ნივთიერებები</p>
+    </header>
+
+    <form id="soilForm">
+      <div class="form-group">
+        <label for="nitrogen">აზოტი (N)</label>
+        <input type="number" id="nitrogen" required>
+      </div>
+      <div class="form-group">
+        <label for="phosphorus">ფოსფორი (P)</label>
+        <input type="number" id="phosphorus" required>
+      </div>
+      <div class="form-group">
+        <label for="potassium">კალიუმი (K)</label>
+        <input type="number" id="potassium" required>
+      </div>
+      <div class="form-group">
+        <label for="ph">ნიადაგის pH</label>
+        <input type="number" step="0.1" id="ph" required>
+      </div>
+      <div class="form-group">
+        <label for="moisture">ტენიანობა (%)</label>
+        <input type="number" id="moisture" required>
+      </div>
+      <button type="submit">გაანალიზე ნიადაგი</button>
+    </form>
+
+    <section class="result" id="resultBox">
+      <h2>AI რეკომენდაციები</h2>
+      <p id="resultText">ანალიზის პასუხები გამოჩნდება აქ...</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
