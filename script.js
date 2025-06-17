@@ -16035,3 +16035,15 @@ function generateFakeAIRecommendation({ nitrogen, phosphorus, potassium, ph, moi
 
   return result;
 }
+
+
+
+
+
+
+
+
+
+
+
+
