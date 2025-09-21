@@ -15961,62 +15961,62 @@ document.getElementById('soilForm').addEventListener('submit', function (e) {
 
 
 function generateFakeAIRecommendation({ nitrogen, phosphorus, potassium, ph, moisture }) {
-  let result = `შემადგნელობა:\n`;
-  result += `- აზოტი: ${nitrogen} mg/kg\n`;
-  result += `- ფოსფორი: ${phosphorus} mg/kg\n`;
-  result += `- კალიუმი: ${potassium} mg/kg\n`;
+  let result = `Composition:\n`;
+  result += `- Nitrogen: ${nitrogen} mg/kg\n`;
+  result += `- Phosphorus: ${phosphorus} mg/kg\n`;
+  result += `- Potassium: ${potassium} mg/kg\n`;
   result += `- pH: ${ph}\n`;
-  result += `- ტენიანობა: ${moisture}%\n\n`;
+  result += `- Moisture: ${moisture}%\n\n`;
 
-  result += `🧪 რეკომენდაციები:\n`;
+  result += `🧪 Recommendations:\n`;
 
   // pH
   if (ph < 6) {
-    result += "- ნიადაგი ძალიან მჟავიანია. pH-ის ასამაღლებლად გამოიყენეთ კირი (კალციუმის კარბონატი - CaCO₃) ან დოლომიტი (CaMg(CO₃)₂). ეს ხელს შეუწყობს მჟავიანობის შემცირებას და საკვები ნივთიერებების უკეთ შეწოვას.\n";
+    result += "- The soil is too acidic. To raise the pH, use lime (calcium carbonate - CaCO₃) or dolomite (CaMg(CO₃)₂). This will help reduce acidity and improve nutrient absorption.\n";
   } else if (ph > 7.5) {
-    result += "- ნიადაგი ტუტეა. მის დასამჟავებლად გამოიყენეთ გოგირდი (Sulfur - S), ამონიუმის სულფატი ((NH₄)₂SO₄) ან ორგანული მასალა როგორიცაა ტორფი.\n";
+    result += "- The soil is alkaline. To acidify it, use sulfur (Sulfur - S), ammonium sulfate ((NH₄)₂SO₄), or organic material such as peat.\n";
   } else {
-    result += "- pH დონე ოპტიმალურია მცენარეთა უმეტესობისთვის.\n";
+    result += "- pH level is optimal for most plants.\n";
   }
 
   // Nitrogen
   if (nitrogen < 50) {
-    result += "- აზოტი დაბალია. გამოიყენეთ აზოტოვანი სასუქები, როგორიცაა შარდოვანა (Urea - CO(NH₂)₂), ამონიუმის ნიტრატი (NH₄NO₃) ან ამონიუმის სულფატი. ორგანულ ალტერნატივად შეგიძლიათ დაამატოთ ნაკელი ან კომპოსტი.\n";
+    result += "- Low in nitrogen. Use nitrogen fertilizers such as urea (Urea - CO(NH₂)₂), ammonium nitrate (NH₄NO₃), or ammonium sulfate. You can add manure or compost as an organic alternative.\n";
   } else if (nitrogen > 150) {
-    result += "- აზოტის დონე მაღალია. მოერიდეთ დამატებით სასუქებს, რათა თავიდან აიცილოთ აზოტის მოწამვლა და ფოთლების ზედმეტი ზრდა.\n";
+    result += "- Nitrogen levels are high. Avoid additional fertilizers to prevent nitrogen poisoning and excessive leaf growth.\n";
   } else {
-    result += "- აზოტის დონე ოპტიმალურია.\n";
+    result += "- Nitrogen levels are optimal.\n";
   }
 
   // Phosphorus
   if (phosphorus < 40) {
-    result += "- ფოსფორის დონე დაბალია. რეკომენდებულია ტრიპლური სუპერფოსფატი (TSP - Ca(H₂PO₄)₂), დიამონიუმ ფოსფატი (DAP - (NH₄)₂HPO₄) ან ბუნებრივი ფოსფატური ქანი. ორგანულად შეგიძლიათ გამოიყენოთ ძვლის ფქვილი.\n";
+    result += "- Phosphorus levels are low. Triple superphosphate (TSP - Ca(H₂PO₄)₂), diammonium phosphate (DAP - (NH₄)₂HPO₄) or natural phosphate rock are recommended. Bone meal can be used organically.\n";
   } else if (phosphorus > 120) {
-    result += "- ფოსფორის დონე გადაჭარბებულია. თავი შეიკავეთ დამატებითი ფოსფატების შეტანისგან, რათა არ მოხდეს სხვა ელემენტების შეწოვის დაბლოკვა.\n";
+    result += "- Phosphorus levels are excessive. Avoid supplemental phosphates to avoid blocking the absorption of other elements.\n";
   } else {
-    result += "- ფოსფორის დონე დამაკმაყოფილებელია.\n";
+    result += "- Phosphorus levels are satisfactory.\n";
   }
 
   // Potassium
   if (potassium < 40) {
-    result += "- კალიუმის დონე დაბალია. გამოიყენეთ კალიუმის სულფატი (K₂SO₄), კალიუმის ქლორიდი (KCl), ან ხის ნაცარი როგორც ორგანული ალტერნატივა. ეს აუმჯობესებს მცენარის გამძლეობას და ხარისხს.\n";
+    result += "- Potassium levels are low. Use potassium sulfate (K₂SO₄), potassium chloride (KCl), or wood ash as an organic alternative. This improves plant vigor and quality.\n";
   } else if (potassium > 150) {
-    result += "- კალიუმი ჭარბია. ზედმეტი კალიუმი აბრკოლებს მაგნიუმისა და კალციუმის შეწოვას. აკონტროლეთ სასუქების დოზირება.\n";
+    result += "- Potassium is in excess. Excess potassium interferes with the absorption of magnesium and calcium. Control the dosage of fertilizers.\n";
   } else {
-    result += "- კალიუმის დონე მისაღებია.\n";
+    result += "- Potassium levels are acceptable.\n";
   }
 
   // Moisture
   if (moisture < 30) {
-    result += "- ნიადაგი მშრალია. რეკომენდებულია რეგულარული მორწყვა და ორგანული მასალის, მაგალითად ტორფის ან ნახერხის გამოყენება ტენის შესანარჩუნებლად.\n";
+    result += "- The soil is dry. Regular watering and the use of organic material, such as peat or sawdust, to retain moisture are recommended.\n";
   } else if (moisture > 80) {
-    result += "- ნიადაგი ზედმეტად ტენიანია. გაისინჯეთ დრენაჟი, რათა ფესვები არ დალპეს. გამოიყენეთ ამაღლებული თხრილები ან ქვიშის შერევა.\n";
+    result += "- The soil is too wet. Check the drainage to prevent root rot. Use raised beds or a sand mix.\n";
   } else {
-    result += "- ტენიანობა შესაფერისია.\n";
+    result += "- The humidity is suitable.\n";
   }
 
   // Fertility score
-  result += `\n📊 საერთო შეფასება:\n`;
+  result += `\n📊 Overall assessment:\n`;
 
   let score = 0;
   if (ph >= 6 && ph <= 7.5) score++;
@@ -16026,11 +16026,11 @@ function generateFakeAIRecommendation({ nitrogen, phosphorus, potassium, ph, moi
   if (moisture >= 30 && moisture <= 80) score++;
 
   if (score === 5) {
-    result += "ნიადაგი იდეალურ მდგომარეობაშია. შესაძლებელია უმეტესობა კულტურების მოყვანა დამატებითი ჩარევის გარეშე.\n";
+    result += "The soil is in ideal condition. It is possible to grow most crops without additional intervention.\n";
   } else if (score >= 3) {
-    result += "ნიადაგი მისაღებია, თუმცა საჭიროა გარკვეული კორექტირება უკეთესი მოსავლის მისაღებად.\n";
+    result += "The soil is acceptable, although some adjustments are needed to get a better harvest.\n";
   } else {
-    result += "ნიადაგი სუსტად ნაყოფიერია და საჭიროებს სრულ გაუმჯობესებას. გაეცანით სამოქმედო გეგმას\n";
+    result += "The soil is poorly fertile and needs complete improvement. Learn about the action plan\n";
   }
 
   return result;
